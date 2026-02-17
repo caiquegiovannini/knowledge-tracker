@@ -10,6 +10,20 @@
 
 Projeto âncora: **Offline‑First Personal Knowledge Tracker** (sem backend)
 
+## 🗒️ Notas
+
+### O que define um module?
+
+Ele deve:   
+✔ Ter responsabilidade própria   
+✔ Ter estado próprio   
+✔ Ter regras próprias   
+✔ Poder evoluir isoladamente   
+
+Se você apagar notes/, o resto da aplicação deve continuar funcionando.   
+
+Isso é modularidade real.
+
 ---
 
 ## 🔒 Escopo fixo (não negociar)
