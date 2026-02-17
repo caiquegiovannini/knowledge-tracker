@@ -1,8 +1,6 @@
 /** @import { Action } from '../../types/action.js' */
 
-import { notesReducer } from '../reducer/notes.js';
-
-function createStore(initialState = { notes: [] }) {
+function createStore(reducer, initialState) {
     let state = initialState;
     const listeners = new Set([]);
 
@@ -16,7 +14,7 @@ function createStore(initialState = { notes: [] }) {
 
     /**@param {Action} action */
     function dispatch(action) {
-        const updatedState = notesReducer(state, action);
+        const updatedState = reducer(state, action);
         setState(updatedState);
 
         // para iterar sobre uma cópia de listeners e não muta-lo durante o loop

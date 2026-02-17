@@ -1,11 +1,11 @@
-import { ADD_NOTE } from './action-type/notes.js'
-import { createStore } from './store/notes.js'
+import { createStore } from './app/store/create-store.js'
+import { notesReducer } from './modules/notes/store/notes.reducer.js'
 
 const {
     getState,
     dispatch,
     subscribe
-} = createStore({notes: []})
+} = createStore(notesReducer, { notes: [] })
 
 // const unsubscribe = subscribe(() => console.log('Estado mudou: ', getState()))
 
