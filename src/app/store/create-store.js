@@ -1,4 +1,4 @@
-/** @import { Action } from '../types/action.js' */
+/** @import { Action } from '../../types/action.js' */
 
 import { notesReducer } from '../reducer/notes.js';
 

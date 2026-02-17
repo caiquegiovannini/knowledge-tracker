@@ -1,5 +1,5 @@
-import { ADD_NOTE } from "../action-type/notes.js";
-/** @import { Action } from '../types/action.js' */
+import { ADD_NOTE } from './notes.actions.js';
+/** @import { Action } from '../../../types/action.js' */
 
 const initialState = { notes: [] };
 
