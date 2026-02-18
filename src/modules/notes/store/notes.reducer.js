@@ -1,10 +1,13 @@
 import { ADD_NOTE } from './notes.actions.js';
-/** @import { Action } from '../../../types/action.js' */
+/** @import { Action } from '@/types/action.js' */
+/** @import { Note } from 'notes/domain/note.types.js' */
 
+/** @type {{notes: Note[]}} */
 const initialState = { notes: [] };
 
 /** 
- * @param {Action} action 
+ * @param {{notes: Note[]}} state
+ * @param {Action<Note>} action 
  */
 function notesReducer(state = initialState, action) {
     switch (action.type) {
@@ -18,7 +21,7 @@ function notesReducer(state = initialState, action) {
             };
     
         default:
-            break;
+            return state;
     }
 }
 
