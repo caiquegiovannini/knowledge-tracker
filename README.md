@@ -10,6 +10,11 @@
 
 Projeto âncora: **Offline‑First Personal Knowledge Tracker** (sem backend)
 
+> ## 💡 Lembrar
+>
+> Arquitetura bonita organiza código.   
+> Arquitetura necessária controla complexidade.
+
 ## 🗒️ Notas
 
 ### O que define um module?
@@ -20,9 +25,17 @@ Ele deve:
 ✔ Ter regras próprias   
 ✔ Poder evoluir isoladamente   
 
-Se você apagar notes/, o resto da aplicação deve continuar funcionando.   
+Se apagarmos notes/, o resto da aplicação deve continuar funcionando.   
 
-Isso é modularidade real.
+
+### Modelo mental 
+
+Domain → Regra
+Application → Fluxo
+Infra → Comunicação externa
+Store → Estado
+UI → Interface
+App → Orquestração global
 
 ---
 
