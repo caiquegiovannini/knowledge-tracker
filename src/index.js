@@ -1,5 +1,6 @@
 import { createStore } from './app/store/create-store.js'
 import { notesReducer } from './modules/notes/store/notes.reducer.js'
+import { createNote } from './modules/notes/domain/note.entity.js'
 
 const {
     getState,
@@ -16,12 +17,5 @@ const {
 // unsubscribe()
 
 // dispatch({type: ADD_NOTE, payload: 'Quatro nota'})
-
-const log = () => console.log("mudou")
-
-const unsub1 = subscribe(log)
-const unsub2 = subscribe(log)
-
-unsub1()
-
-dispatch({ type: "ANY" })
+const testNote = createNote({title: 'Nota teste', content: 'Conteudo da nota teste'})
+console.log(testNote)
