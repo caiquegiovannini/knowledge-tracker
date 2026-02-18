@@ -1,7 +1,8 @@
 /**
+ * @template T
  * @typedef {Object} Action
  * @property {string} type
- * @property {unknown} payload
+ * @property {T} payload
  */
 
 export {};
