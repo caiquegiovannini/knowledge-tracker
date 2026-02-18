@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "checkJs": true,
+    "allowJs": true,
+    "noEmit": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"],
+      "notes/*": ["./modules/notes/*"]
+    }
+  },
+  "include": ["src"]
+}
