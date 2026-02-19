@@ -1,6 +1,6 @@
 import { createStore } from './app/store/create-store.js'
 import { notesReducer } from './modules/notes/store/notes.reducer.js'
-import { createNote } from './modules/notes/domain/note.entity.js'
+import { createNote, updateNote } from './modules/notes/domain/note.entity.js'
 
 const {
     getState,
@@ -18,4 +18,5 @@ const {
 
 // dispatch({type: ADD_NOTE, payload: 'Quatro nota'})
 const testNote = createNote({title: 'Nota teste', content: 'Conteudo da nota teste'})
-console.log(testNote)
+const testUpdatedNote = updateNote(testNote, {content: 'Conteudo atalizado'})
+console.log(testUpdatedNote)
