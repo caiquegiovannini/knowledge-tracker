@@ -23,4 +23,38 @@ function createNote({ title, content, revision = null }) {
     });
 };
 
-export { createNote };
+/**
+ * @param {Note} previousNote 
+ * @param {Object} updatedNote 
+ * @param {string} [updatedNote.title] 
+ * @param {string} [updatedNote.content] 
+ * @returns {Note}
+ */
+function updateNote(previousNote, { title, content }) {
+    if (!previousNote) throw new Error("Previous note is required");
+
+    if (title === undefined && content === undefined) {
+        throw new Error("There is nothing to update");
+    }
+
+    if (title !== undefined && !title?.trim()) {
+        throw new Error("Title cannot be empty");
+    }
+
+    if (content !== undefined && !content?.trim()) {
+        throw new Error("Content cannot be empty");
+    }
+
+    return Object.freeze({
+        id: crypto.randomUUID(),
+        title: title ?? previousNote.title,
+        content: content ?? previousNote.content,
+        revision: previousNote,
+        createdAt: new Date()
+    });
+}
+
+export {
+    createNote,
+    updateNote
+};
