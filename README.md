@@ -103,8 +103,6 @@ App → Orquestração global
 
 ### Segunda — Identidade e referências
 
-* 📖 Ler: *Object Equality in JS* (Josh Comeau)
-  [https://www.joshwcomeau.com/javascript/object-equality/](https://www.joshwcomeau.com/javascript/object-equality/)
 * 💻 Fazer:
 
   * Modelar `Note` (id, title, content)
