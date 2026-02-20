@@ -54,7 +54,42 @@ function updateNote(previousNote, { title, content }) {
     });
 }
 
+/**
+ * @param {Note} note 
+ */
+function getHistory(note) {
+    if (!note) throw new Error("Note is required to get the history");
+    const history = [];
+    /** @type {Note|null} */
+    let current = note;
+
+    while (current) {
+        history.push(current);
+        current = current.revision;
+    }
+
+    return Object.freeze(history);
+}
+
+/**
+ * @param {Note} note 
+ */
+function getInitialVersion(note) {
+    if (!note) throw new Error("A note is required to get initial version of it");
+
+    /** @type {Note|null} */
+    let currentNote = note;
+    
+    while (currentNote.revision !== null) {
+        currentNote = currentNote.revision;
+    }
+
+    return currentNote;
+};
+
 export {
     createNote,
-    updateNote
+    updateNote,
+    getHistory,
+    getInitialVersion
 };
