@@ -1,11 +1,11 @@
 import { createStore } from './app/store/create-store.js'
 import { notesReducer } from './modules/notes/store/notes.reducer.js'
-import { createNote, updateNote } from './modules/notes/domain/note.entity.js'
+import { createNote, updateNote, getHistory, getInitialVersion } from './modules/notes/domain/note.entity.js'
 
 const {
     getState,
     dispatch,
-    subscribe
+    subscribe,
 } = createStore(notesReducer, { notes: [] })
 
 // const unsubscribe = subscribe(() => console.log('Estado mudou: ', getState()))
@@ -18,5 +18,6 @@ const {
 
 // dispatch({type: ADD_NOTE, payload: 'Quatro nota'})
 const testNote = createNote({title: 'Nota teste', content: 'Conteudo da nota teste'})
-const testUpdatedNote = updateNote(testNote, {content: 'Conteudo atalizado'})
-console.log(testUpdatedNote)
+const testUpdatedNote1 = updateNote(testNote, {content: 'Conteudo atalizado'})
+const testUpdatedNote2 = updateNote(testUpdatedNote1, {title: 'Teste v3'})
+console.log(getInitialVersion(testUpdatedNote2))
