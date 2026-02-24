@@ -10,6 +10,20 @@
 
 Projeto âncora: **Offline‑First Personal Knowledge Tracker** (sem backend)
 
+## O que estamos treinando:
+
+- Separação conceitual (domain ≠ application ≠ interface)
+- Invariantes
+- Entidade rica
+- Imutabilidade real
+- Encadeamento estrutural
+
+### Isso é base de:
+
+- DDD
+- Event Sourcing
+- Arquiteturas enterprise
+
 > ## 💡 Lembrar
 >
 > Arquitetura bonita organiza código.   
@@ -115,13 +129,19 @@ App → Orquestração global
   * Ao salvar nota, criar `Revision`
   * Garantir histórico imutável
 
-### Quarta — Assincronicidade
+### Quarta — Navegação segura de histórico encadeado
 
-* 📖 Ler/Ver: *The Event Loop* (Jake Archibald)
-  [https://www.youtube.com/watch?v=cCOL7MC4Pl0](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
+* 📖 Ler/Ver: 
+  - Linked List (conceito base):
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Keyed_collections#maps_vs_objects
+
+  - Leitura complementar clara:
+https://www.geeksforgeeks.org/linked-list-data-structure/
+
 * 💻 Fazer:
 
-  * Simular save assíncrono (Promise + timeout)
+  * 
+  * Sem layout, só HTML básico
 
 ### Quinta — Consolidação
 
@@ -131,14 +151,23 @@ App → Orquestração global
 
 ---
 
-## Semana 3 — Primeira UI (mínima)
+## Semana 3 — Application Layer
 
-### Segunda — Render bruto
+### Segunda — Separação real de camadas
 
-* 💻 Fazer:
+#### Objetivo
 
-  * Renderizar lista de notas
-  * Sem layout, só HTML básico
+Garantir que o reducer não contenha regra de negócio.
+
+#### Tarefas
+
+- Reducer chama apenas createNote e updateNote
+- Nenhuma validação de domínio no reducer
+- Nenhum merge manual
+- Apenas substituição de head
+
+#### Resultado esperado
+Reducer = função pura de orquestração.
 
 ### Terça — Editor simples
 
