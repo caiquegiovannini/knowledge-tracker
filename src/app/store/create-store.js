@@ -1,10 +1,10 @@
-/** @import { Action } from '@/types/action.js' */
+/** @import { NotesAction } from 'notes/application/notes.actions.types.js' */
 
 /**
- * @template S, P
- * @param {(state: S, action: Action<P>) => S} reducer 
+ * @template S
+ * @param {(state: S, action: NotesAction) => S} reducer 
  * @param {S} initialState 
- * @returns {{getState: () => S, dispatch: (action: Action<P>) => void, subscribe: (listener: () => void) => () => void}}
+ * @returns {{getState: () => S, dispatch: (action: NotesAction) => void, subscribe: (listener: () => void) => () => void}}
  */
 function createStore(reducer, initialState) {
     let state = initialState;
@@ -19,7 +19,7 @@ function createStore(reducer, initialState) {
         state = newState;
     }
 
-    /**@param {Action<P>} action */
+    /**@param {NotesAction} action */
     function dispatch(action) {
         const updatedState = reducer(state, action);
         setState(updatedState);
