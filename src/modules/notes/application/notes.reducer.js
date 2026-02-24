@@ -1,4 +1,4 @@
-import { createNote, updateNote } from 'notes/domain/note.entity.js';
+import { createNote, updateNote } from '../domain/note.entity.js';
 import { ADD_NOTE, UPDATE_NOTE } from './notes.actions.js';
 /** @import { Note } from 'notes/domain/note.types.js' */
 /** @import { NotesAction } from './notes.actions.types.js' */
