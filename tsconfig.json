@@ -10,7 +10,8 @@
     "baseUrl": "./src",
     "paths": {
       "@/*": ["*"],
-      "notes/*": ["./modules/notes/*"]
+      "notes/*": ["./modules/notes/*"],
+      "app/*": ["./app/*"]
     }
   },
   "include": ["src"]
