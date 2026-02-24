@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/styles.css" />
+    <!-- <link rel="stylesheet" href="./public/styles-retro.css" /> -->
+
+    <title>Knowledge Tracker</title>
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>Notes</h1>
+        </header>
+
+        <main class="container">
+            <section class="form-section">
+                <form id="form">
+                    <input
+                        type="text"
+                        name="title"
+                        placeholder="Title"
+                        required
+                    />
+
+                    <textarea
+                        name="content"
+                        placeholder="Content"
+                        required
+                    ></textarea>
+
+                    <button type="submit">
+                        Add Note
+                    </button>
+                </form>
+            </section>
+
+            <section class="list-section">
+                <ul id="notes-list"></ul>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="./src/app/main.js"></script>
+</body>
+</html>
