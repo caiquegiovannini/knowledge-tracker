@@ -2,6 +2,7 @@ import { createStore } from './app/store/create-store.js'
 import { notesReducer } from './modules/notes/application/notes.reducer.js'
 import { ADD_NOTE, UPDATE_NOTE } from './modules/notes/application/notes.actions.js';
 import { getHistory } from './modules/notes/domain/note.entity.js';
+import { selectNotes } from './modules/notes/application/notes.selectors.js';
 
 const {
     getState,
@@ -18,10 +19,15 @@ const {
 // unsubscribe()
 
 // dispatch({type: ADD_NOTE, payload: 'Quatro nota'})
-dispatch({type: ADD_NOTE, payload: { note: {title: 'Nota teste', content: 'Conteudo da nota teste'}}});
+
+
+
+dispatch({type: ADD_NOTE, payload: { title: 'Nota teste', content: 'Conteudo da nota teste' }});
 const testNote = getState().notes[0];
 dispatch({type: UPDATE_NOTE, payload: {previousNoteId: testNote.id, updatePayload: {content: 'Conteudo atalizado'}}});
-const testNote1 = getState().notes[0];
+
+const state = getState();
+const notes = selectNotes(state);
 
 // const testNoteUpdated2 = dispatch({type: UPDATE_NOTE, payload: {previousNote: testNoteUpdated1, updatedNote: {title: 'Teste v3'}}});
-console.log(getHistory(testNote1))
+console.log(notes)
