@@ -13,7 +13,7 @@ const initialState = { notes: [] };
 function notesReducer(state = initialState, action) {
     switch (action.type) {
         case ADD_NOTE:
-            const newNote = createNote(action.payload.note);
+            const newNote = createNote(action.payload);
             return {
                 ...state,
                 notes: [

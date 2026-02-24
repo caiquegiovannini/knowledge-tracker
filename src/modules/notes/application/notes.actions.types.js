@@ -1,7 +1,7 @@
 /**
  * @typedef {Object} AddNoteAction
  * @property {'ADD_NOTE'} type
- * @property {{ note: { title: string, content: string } }} payload
+ * @property {{ title: string, content: string }} payload
  */
 
 /**
