@@ -3,16 +3,18 @@ import { ADD_NOTE, UPDATE_NOTE } from './notes.actions.js';
 /** @import { Note } from 'notes/domain/note.types.js' */
 /** @import { NotesAction } from './notes.actions.types.js' */
 
-/** @type {{notes: Note[]}} */
+/** @typedef {{notes: Note[]}} NotesState*/
+
+/** @type {NotesState} */
 const initialState = { notes: [] };
 
 /** 
- * @param {{notes: Note[]}} state
+ * @param {NotesState} state
  * @param {NotesAction} action
  */
 function notesReducer(state = initialState, action) {
     switch (action.type) {
-        case ADD_NOTE:
+         case ADD_NOTE:
             const newNote = createNote(action.payload);
             return {
                 ...state,
